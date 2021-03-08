@@ -1,5 +1,6 @@
 from collections import deque
 dq=deque()
+
 n=list(map(int,input().split()))
 print(n)
 
@@ -10,4 +11,3 @@ for i in range(n[1]):
 
 print(dq)
 
-print(dq.index(1))
