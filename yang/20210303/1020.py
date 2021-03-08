@@ -6,7 +6,6 @@ qq=list(k)
 
 q=list(map(int,qq))
 
-
 w=0
 
 print(k)
@@ -35,3 +34,5 @@ for i in range(len(q)):
         w+=5
 
 print(w)
+
+
