@@ -46,6 +46,20 @@ someList.sort(key=lambda t:t[0]) # 0번째 기준으로
 - lambda 'parameter': express
 - ex) lambda x,y: x+y
 
+### 이진화
+정수를 이진화로 바꾸고 이진화된 변수를 인덱스로 접근할 수 있다. 이진화 된 변수는 **문자열**형태.
+또한, 정수끼리 비트 연산이 가능하다.
+```python
+x = int(input())
+
+binary = bin(x)
+count = binary.count('1')
+
+print(count)
+---
+print(3 & 2) # 11 & 10 => 10
+```
+
 <br>
 
 ## JavaScript
