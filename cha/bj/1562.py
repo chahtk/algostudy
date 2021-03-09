@@ -1,3 +1,4 @@
+# fail
 import copy
 
 n = int(input())
