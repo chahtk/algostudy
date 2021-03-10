@@ -41,7 +41,7 @@ while (True) :
                     sum_nums=nums[p1+1]
                 else:
                     out=True
-                p1=p1+1
+                p2=p1=p1+1
                 break
 print(ans+1)
 
