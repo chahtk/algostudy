@@ -18,7 +18,6 @@ def dfs(now,chonsu):
     global ans
     visit[now]=1
     if(now==b):
-        print(chonsu)
         ans=chonsu
         return 0
     for i in range(len(chon[now])):
