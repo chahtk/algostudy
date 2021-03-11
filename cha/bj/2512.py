@@ -13,7 +13,7 @@ def solve():
   if start == end:
     print(start//len(arr))
     return
-  while start <= end:
+  while start < end:
     mid = (start+end)//2
     tempSum = 0
     for val in arr:
@@ -22,11 +22,11 @@ def solve():
       else:
         tempSum += mid
 
-    if tempSum > maxAmount:
-      end = mid - 1
-    else:
+    if tempSum <= maxAmount:
       start = mid + 1
-  print(end)
+    else:
+      end = mid
+  print(start-1)
 
 solve()
 
