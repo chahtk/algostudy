@@ -1,38 +1,33 @@
-import sys
+n,c = map(int,input().split())
 
+house = []
+for _ in range(n):
+    x = int(input())
+    house.append(x)
 
-N,C=map(int,sys.stdin.readline().split())
-router=[]
+house.sort()
 
-for _ in range(N):
-    get=int(sys.stdin.readline())
-    router.append(get)
+# 가장 낮은 좌표와 그 다음으로 낮은 좌표의 차이
+start = 1
+# 가장 높은 좌표와 가장 낮은 좌표의 차이
+end = house[-1] - house[0]
 
-router.sort()
+result = 0
 
-def check(l):
-    c=1
-    now=1
-    before=0
-    while(c<=C and now<N):
-        if(router[before]+l<=router[now]):
-            c+=1
-            befor=now
-        now+=1
-    if(now>N):
-        return 1
-    if(c>C):
-        return -1
-    return 0
+while (start <= end):
+    mid = (start+end)//2 # 해당 gap
+    old = house[0]
+    count = 1
 
-def binarySearch(l,r):
-    mid=(l+r)/2
-    if(check(mid)==0):
-        print(mid)
-        return 
-    elif(check(mid)==1):
-        binarySearch(l,mid-1)
-    if(check(mid)==-1):
-        binarySearch(mid+1,r)
-        
-binarySearch(router[0],router[len(router)-1])
+    for i in range(1, len(house)):
+        if house[i] >= old+mid: # gap 이상
+            count+=1
+            old = house[i]
+    
+    if count >=c:
+        start = mid + 1
+        result = mid
+    else:
+        end = mid - 1
+
+print(result)
