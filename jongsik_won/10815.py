@@ -23,8 +23,8 @@ def binarySearch(l,r,t):
         return binarySearch(mid+1,r,t)
     
 for i in gets:
-#    print(binarySearch(0,len(mine)-1,i),end=" ")
-    if i in mine:
-        print(1)
-    else:
-        print(0)
+    print(binarySearch(0,len(mine)-1,i),end=" ")
+    # if i in mine:
+    #     print(1,end=" ")
+    # else:
+    #     print(0,end=" ")
