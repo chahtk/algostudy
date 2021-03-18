@@ -18,7 +18,7 @@ for _ in range(T):
             while(l<=r):
                 mid=(l+r)//2
                 if(mul[i]+mul[mid]==num):
-                    print("yes")
+                    print("YES")
                     c=False
                     break
                 if(mul[i]+mul[mid]<num):
@@ -28,5 +28,5 @@ for _ in range(T):
         else:
             break
     if(c):
-        print("no")
+        print("NO")
                 
