@@ -10,4 +10,4 @@ def dp(k):
         x.append((x[i-1]+x[i-2]*2))
     return x[k]
 
-print(dp(n))
+print(dp(n)%10007)
