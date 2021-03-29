@@ -1,0 +1,56 @@
+import sys
+
+T=int(sys.stdin.readline())
+for _ in range(T):
+    a,b=map(int,sys.stdin.readline().split())
+    get1=list(map(int,sys.stdin.readline().split()))
+    get2=list(map(int,sys.stdin.readline().split()))
+    a1=[]
+    a2=[]
+    for i in range(a):
+        if(get2[i]==1):
+            a1.append(get1[i])
+        else:
+            a2.append(get1[i])
+    a1.sort()
+    a2.sort()
+    print(get1)
+    if(sum(get1)<b):
+        print(-1)
+    elif(sum(get1)==b):
+        print(sum(get2))
+    else:
+        ans=0
+        sums=0
+        p1=len(a1)-1
+        p2=len(a2)-1
+        while(sums<b):
+            if(p1>-1):
+                if(sums+a1[p1]>=b):
+                    sums+=a1[p1]
+                    ans+=1
+                    break
+            if(p2<0):
+                sums+=a1[p1]+a1[p1-1]
+                p1-=2
+                ans+=2
+                continue
+            if(p1==0):
+                if(a1[p1]>a2[p2]):
+                    sums+=a1[p1]
+                    ans+=1
+                    p1-=1
+                else:
+                    sums+=a2[p2]
+                    ans+=2
+                    p2-=1
+                continue
+            if(a1[p1]+a1[p1-1]>a2[p2]):
+                sums+=a1[p1]+a1[p1-1]
+                ans+=2
+                p1-=2
+            else:
+                sums+=a2[p2]
+                ans+=2
+                p2-=1
+        print(ans)
